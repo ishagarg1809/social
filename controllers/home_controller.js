@@ -1,4 +1,11 @@
+const { readSync } = require("fs");
 
 module.exports.home = function(req, res){
-    return res.end('<h1> Hello </h1>');
+    console.log(req.cookies);
+    // to change the value of the user id
+    res.cookie('user_id', 14);  
+    return res.render('home', {
+        title : 'Home Page'
+    });
 }
+
