@@ -3,6 +3,10 @@ const port = 8000;
 
 const app = express();
 
+// use express router
+app.use('/', require('./route')); 
+
+
 const cookieParser = require('cookie-parser');
 
 app.set('view engine', 'ejs');
@@ -11,9 +15,6 @@ app.set('views', './views');
 // middleware
 app.use(express.urlencoded());
 app.use(cookieParser());
-
-// use express router
-app.use('/', require('./route')); 
 
 app.get('/', require('./route/index'));
 
