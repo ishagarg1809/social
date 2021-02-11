@@ -1,3 +1,4 @@
+// const fs = require('fs');
 const { truncate } = require('fs');
 const mongoose = require('mongoose');
 const userSchema = new mongoose.Schema({
@@ -7,7 +8,7 @@ const userSchema = new mongoose.Schema({
         unique : true
     },
     password : {
-        type : String
+        type : String,
         required : true
     },
     name : {
