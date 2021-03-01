@@ -20,7 +20,7 @@ module.exports.signIn = function(req, res){
 module.exports.create = function(req,res){
 
     // check if password matches the confirm password
-    if(res.body.password != req.body.confirm_password){
+    if(req.body.password != req.body.confirm_password){
         return res.redirect('back');
     }
     // find the user in the database to prevent double use of email
@@ -44,6 +44,6 @@ module.exports.create = function(req,res){
 }
 
 module.exports.createSession = function(req,res){
-    //Todo later
+    return res.redirect('/profile');
 }
 
